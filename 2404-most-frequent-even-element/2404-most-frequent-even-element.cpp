@@ -14,10 +14,10 @@ public:
         // sort(v.begin(),v.end());
         // if(v.size()==0) return -1;
         // return v[0];
-        int ans = -1, mx = 0;
+        int ans=-1, mx =INT_MIN;
         map<int, int> m;
-        for (auto &x : nums) m[x]++;
-        for (auto &x : m) {
+        for (auto x : nums) m[x]++;
+        for (auto x : m) {
             if (x.first % 2 == 0 && x.second > mx) {
                 mx = x.second;
                 ans = x.first;
