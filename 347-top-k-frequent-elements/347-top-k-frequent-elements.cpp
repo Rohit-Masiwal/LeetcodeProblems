@@ -6,8 +6,9 @@ public:
         vector<pair<int,int>> v;
         for(auto x:mp) v.push_back({x.second,x.first});
         sort(v.begin(),v.end(),greater<pair<int,int>>());
+        //for(auto x:v) cout<<x.first<<" "<<x.second<<"\n";
         vector<int> res;
-        for(int i=0;i<min(k,(int)v.size());i++) res.push_back(v[i].second);
+        for(int i=0;i<k;i++) res.push_back(v[i].second);
         return res;
     }
 };
