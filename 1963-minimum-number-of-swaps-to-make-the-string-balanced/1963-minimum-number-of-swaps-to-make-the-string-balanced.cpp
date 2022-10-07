@@ -12,6 +12,7 @@ public:
         //    cout<<st.top()<<" ";
         //     st.pop();
         // }
+        //cout<<st.size();
         return (st.size()+1)/2;
     }
 };
