@@ -1,6 +1,6 @@
 # Decode the string
 ## Medium
-<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">An encoded string (<strong>s</strong>) is given, the task is to decode it. The encoding pattern is that the occurance of the string is given at the starting of the string and each string is enclosed by square brackets.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">An encoded string (<strong>s</strong>) is given, and the task is to decode it. The encoding pattern is that the occurrence of the string is given at the starting of the string and each string is enclosed by square brackets.</span></p>
 
 <p><strong><span style="font-size:18px">Example 1:</span></strong></p>
 
@@ -18,7 +18,7 @@ twice which is 'caca' which concatenated with
 thrice becomes the output.</span></pre>
 
 <p><span style="font-size:18px"><strong>Your Task:</strong><br>
-You do not need to read input or print annything. Your task is to complete the function <strong>decodedString()</strong> which takes s as input parameter and returns the decoded string.</span></p>
+You do not need to read input or print anything. Your task is to complete the function <strong>decodedString()</strong> which takes s as the input parameter and returns the decoded string.</span></p>
 
 <p><span style="font-size:18px"><strong>Expected Time Complexity:</strong> O(|s|)<br>
 <strong>Expected Auxiliary Space:</strong> O(|s|)</span></p>
