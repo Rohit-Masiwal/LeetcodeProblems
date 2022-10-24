@@ -17,11 +17,8 @@ class Solution {
         map<string,int> mp;
         for(auto x:A) mp[x]++;
         vector<alphanumeric> ans;
-        for(auto x:mp) {
-            alphanumeric obj;
-            obj.name=x.first;
-            obj.count=x.second;
-            ans.push_back(obj);
+        for(auto i:mp){
+            ans.push_back({i.first,i.second});
         }
         return ans;
     }
