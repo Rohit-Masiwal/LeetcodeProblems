@@ -17,7 +17,7 @@ public:
         vector<pair<int,string>> v;
         for(auto x:mp) v.push_back({x.second,x.first});
         sort(v.begin(),v.end(),comp);
-        for(auto x:v) cout<<x.second<<" "<<x.first<<"\n";
+        //for(auto x:v) cout<<x.second<<" "<<x.first<<"\n";
         vector<string> ans;
         for(int i=0;i<k;i++) ans.push_back(v[i].second);
         return ans;
