@@ -14,16 +14,15 @@ class Solution
     //Function to find maximum of each subarray of size k.
     vector <int> max_of_subarrays(int *arr, int n, int k)
     {
-        multiset<int> s;
-        for(int i=0;i<k;i++) s.insert(arr[i]);
-        vector<int> res;
-        res.push_back(*prev(s.end()));
-        for(int i=k;i<n;i++) {
-            s.erase(s.lower_bound(arr[i-k]));
-            s.insert(arr[i]);
-            res.push_back(*prev(s.end()));
+        deque<int> dq;
+        vector<int> ans;
+        for(int i=0;i<n;i++){
+            while(!dq.empty() && arr[dq.back()]<=arr[i]) dq.pop_back();
+            dq.push_back(i);
+            while(!dq.empty() && dq.front()<=i-k) dq.pop_front();
+            if(i>=k-1) ans.push_back(arr[dq.front()]);
         }
-        return res;
+        return ans;
     }
 };
 
