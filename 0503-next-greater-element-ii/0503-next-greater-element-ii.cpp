@@ -16,6 +16,7 @@ public:
         [5,6,5,8,-1]
         [5,6,6,8,-1]
         */
+        //for(auto x:ans) cout<<x<<" ";
         reverse(ans.begin(),ans.end());
         vector<int> ans1;
         for(int i=0;i<nums1.size();i++) ans1.push_back(ans[i]);
