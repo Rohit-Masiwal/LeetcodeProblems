@@ -16,10 +16,31 @@ class Solution{
         int maxsize=INT_MIN;
         int i=0,j=0;
         while(j<n){
-            if(arr[j]-arr[i]<=k) j++;
-            else if(i<j) i++;
+            if(arr[j]-arr[i]<=k){
+                //cout<<arr[j]<<" "<<arr[i]<<" ";
+                j++;
+                //cout<<"j="<<j<<" ";
+            }
+            else if(i<j){
+                i++;
+                //cout<<"i="<<i<<" ";
+            }
             maxsize=max(maxsize,j-i);
+            //cout<<"max="<<maxsize<<"\n";
         }
+        /*
+        1 5 6 2 8  k=2
+        sort 1 2 5 6 8
+        1-1=0 max=1-0=1 ,2-1=1 max=2-0=2,   5-1=4
+        j=2;
+        i=1;
+        
+        
+        5-2=3
+        i=2
+        max=
+        5-5=0,6-5=1,8-5=2
+        */
         return n-maxsize;
     }
 };
