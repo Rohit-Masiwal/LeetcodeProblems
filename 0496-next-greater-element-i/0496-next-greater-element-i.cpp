@@ -10,6 +10,7 @@ public:
             un[nums2[i]]=((!st.empty()))? st.top():-1;
             st.push(nums2[i]);
         }
+        //for(auto x:un) cout<<x.first<<" "<<x.second<<"\n";
         for(auto x:nums1) ans.push_back(un[x]);
         return ans;
     }
