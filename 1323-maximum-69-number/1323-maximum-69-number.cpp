@@ -1,7 +1,6 @@
 class Solution {
 public:
     int maximum69Number (int num) {
-        stack<int> st;
         vector<int> res;
         while(num>0){
             res.push_back(num%10);
