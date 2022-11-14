@@ -12,9 +12,7 @@ public:
         }
         //for(auto x:ans) cout<<x<<" ";
         map<float,int> mp;
-        int count=0;
         for(auto x:ans) mp[x]++;
-        for(auto x:mp) count++;
-        return count;
+        return mp.size();
     }
 };
