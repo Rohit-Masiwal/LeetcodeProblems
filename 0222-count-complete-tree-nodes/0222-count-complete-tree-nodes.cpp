@@ -11,19 +11,7 @@
  */
 class Solution {
 public:
-    int count=0;
-    void preorder(TreeNode* root){
-        if(root!=NULL)
-        {
-            count++;
-            preorder(root->left);
-            preorder(root->right);
-        }
-        
-    }
     int countNodes(TreeNode* root) {
-        if(root==NULL) return 0;
-        preorder(root);
-        return count;
+        return (root!=NULL)? countNodes(root->left)+countNodes(root->right)+1:0;
     }
 };
