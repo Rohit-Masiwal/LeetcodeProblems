@@ -18,17 +18,12 @@ public:
             pse.push_back(res);
             st2.push(i);
         }
-        // for(auto x:nse) cout<<x<<" ";
-        // cout<<"\n";
-        // for(auto x:pse) cout<<x<<" ";
         map<vector<int>,vector<int>> mp;
         for(int i=0;i<n;i++) {
             mp[{arr[i],pse[i],nse[i]}].push_back(i);
         }
         int res=0;
         for(auto x:mp) {
-            // cout<<x.first[0]<<" "<<x.first[1]<<" "<<x.first[2]<<" --- ";
-            // for(auto y:x.second) cout<<y<<" ";cout<<"\n";
             if(x.second.size()>1) {
                 int l=x.first[1];
                 int r=x.first[2];
