@@ -11,7 +11,7 @@ public:
             s2=32-1-1=30,32-3-2=27,32-6-3=21
             */
             sum2=sum-sum1+i;
-            cout<<sum1<<" "<<sum2<<"\n";
+            //cout<<sum1<<" "<<sum2<<"\n";
             if(sum1==sum2) return i;
         }
         return -1;
