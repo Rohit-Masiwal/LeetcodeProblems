@@ -8,8 +8,7 @@ public:
         for(int i=0;i<n;i++) lo[matches[i][1]]++;
 //         for(auto x:wi) cout<<x.first<<" "<<x.second<<"\n";
 //         cout<<"---------"<<"\n";
-//         for(auto x:lo) cout<<x.first<<" "<<x.second<<"\n";
-        
+//         for(auto x:lo) cout<<x.first<<" "<<x.second<<"\n"; 
         vector<int> v;
         for(auto x:wi){
             if(lo.find(x.first)==lo.end()) v.push_back(x.first);
