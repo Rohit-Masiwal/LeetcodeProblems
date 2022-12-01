@@ -15,21 +15,14 @@ class Solution{
     //Function to rearrange  the array elements alternately.
     void rearrange(long long *arr, int n) 
     { 
-    	vector<int> v,v1;
-    	for(int i=0;i<n/2;i++) v.push_back(arr[i]);
-    	for(int i=n/2;i<n;i++) v1.push_back(arr[i]);
-    	reverse(v1.begin(),v1.end());
-    // 	for(auto x:v) cout<<x<<" ";
-    // 	cout<<"\n";
-    // 	for(auto x:v1) cout<<x<<" ";
-    // 	cout<<"\n";
-    	int a=0,b=0;
-    	for(int i=0;i<n;i++){
-    	    if(i%2==0)
-    	        arr[i]=v1[a++];
-    	        else
-    	        arr[i]=v[b++];
+    	vector<long> res;
+    	int i=0,j=n-1;
+    	while(i<=j){
+    	    res.push_back(arr[j--]);
+    	    res.push_back(arr[i++]);
     	}
+    	i=0;
+    	for(auto x:res) arr[i++]=x;
     }
 };
 
