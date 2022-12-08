@@ -13,7 +13,7 @@ class Solution {
 public:
     void dfs(TreeNode* root,vector<int> &v){
         if (!root) return;
-        if (!(root->left || root->right)) {
+        if (root->left==NULL && root->right==NULL) {
             v.push_back(root->val);
         }
         dfs(root->left, v);
