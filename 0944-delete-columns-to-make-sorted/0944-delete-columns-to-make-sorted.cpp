@@ -5,21 +5,20 @@ public:
         int m=strs[0].size();
         int count=0;
         for(int i=0;i<m;i++){
-            for(int j=1;j<n;j++){
-                if(strs[j][i]<strs[j-1][i]){ 
-                    count++;
-                    break;
-                }
+            string a,b;
+            for(int j=0;j<n;j++){
+                a+=strs[j][i];
+                b+=strs[j][i];
             }
-        }/*
-        a b c
-        b c e
-        c a e
-        
-        c b a
-        d a f
-        g h i
-        */
+            /*0 1 2 3
+            0 r r j k
+            1 f u r t
+            2 g u z m
+            */
+            cout<<a<<" "<<b<<"\n";
+            sort(a.begin(),a.end());
+            if(a!=b) count++;
+        }
         return count;
     }
 };
