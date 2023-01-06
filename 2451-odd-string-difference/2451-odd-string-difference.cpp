@@ -14,6 +14,16 @@ public:
             mp1[v]=words[i];
             mp2[v]++;
         }
+        // cout<<"MP1"<<"\n";
+        // for(auto x:mp1){
+        //     for(auto y:x.first) cout<<y<<" ";
+        //     cout<<x.second<<"\n";
+        // }
+        // cout<<"MP2"<<"\n";
+        // for(auto x:mp2){
+        //     for(auto y:x.first) cout<<y<<" ";
+        //     cout<<x.second<<"\n";
+        // }
         for(auto x:mp2) {
             if(x.second==1) return mp1[x.first];
         }
