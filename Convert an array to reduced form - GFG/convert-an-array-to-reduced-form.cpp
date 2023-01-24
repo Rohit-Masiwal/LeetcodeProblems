@@ -10,19 +10,28 @@ class Solution{
 public:	
 	// Converts arr[0..n-1] to reduced form.
 	void convert(int arr[], int n) {
-	    vector<pair<int,int>> ans;
+	    vector<pair<int,int>> v;
+	    for(int i=0;i<n;i++) v.push_back({arr[i],i});
+	    sort(v.begin(),v.end());
 	    for(int i=0;i<n;i++){
-	        ans.push_back({arr[i],i});
+	        arr[v[i].second]=i;
 	    }
-	    sort(ans.begin(),ans.end());
-	    /*
-	    10 0
-	    20 1
-	    40 2
-	    */
-	    for(int i=0;i<n;i++){
-	        arr[ans[i].second]=i;
-	    }
+	    
+	  /*
+	  10 0 
+	  20 2
+	  40 1
+	  
+	  arr[0]=0
+	  arr[2]=1
+	  arr[1]=2
+	  
+	  0 2 1
+	  
+	  
+	  
+	  
+	  */
 	}
 
 };
