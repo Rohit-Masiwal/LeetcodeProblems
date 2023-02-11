@@ -4,7 +4,7 @@ public:
         if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u' ) return 1;
         return 0;
     }
-    vector<int> vowelStrings(vector<string>& w, vector<vector<int>>& queries) {
+    vector<int> vowelStrings(vector<string>& w, vector<vector<int>>& x) {
         vector<int> ans;
         int n=w.size();
         vector<int> res(n);
@@ -19,9 +19,9 @@ public:
             }
         }
         for(auto x:res) cout<<x<<" ";
-        for(auto x:queries) {
-            int l=x[0];
-            int r=x[1];
+        for(int i=0;i<x.size();i++) {
+            int l=x[i][0]; //queries[0][0]
+            int r=x[i][1]; //x[]
             if(l==0) ans.push_back(res[r]);
             else ans.push_back(res[r]-res[l-1]);
         }
