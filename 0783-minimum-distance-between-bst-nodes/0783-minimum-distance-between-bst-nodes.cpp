@@ -11,21 +11,20 @@
  */
 class Solution {
 public:
-    void inorder(TreeNode* root, vector<int>&v){
+    void inorder(TreeNode* root,vector<int>& v){
         if(root!=NULL){
             inorder(root->left,v);
             v.push_back(root->val);
             inorder(root->right,v);
         }
-    }
+    } 
     int minDiffInBST(TreeNode* root) {
         vector<int> v;
         inorder(root,v);
-        int diff=INT_MAX;
+        int ans=INT_MAX;
         for(int i=0;i<v.size()-1;i++){
-            if(v[i+1]-v[i] < diff)
-                diff = v[i+1] - v[i];
+            ans=min(ans,v[i+1]-v[i]);
         }
-        return diff;
+        return ans;
     }
 };
