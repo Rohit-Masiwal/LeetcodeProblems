@@ -8,7 +8,7 @@ public:
             int high=potions.size()-1;
             int count=0;
             while(low<=high){
-                int mid=low+(high-low)/2;
+                int mid=(low+high)/2;
                 if(x*potions[mid]>=success){
                     count+=high-mid+1;
                     high=mid-1;
