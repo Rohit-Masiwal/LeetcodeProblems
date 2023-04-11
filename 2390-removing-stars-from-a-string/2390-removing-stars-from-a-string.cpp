@@ -1,10 +1,10 @@
 class Solution {
 public:
     string removeStars(string s) {
-        stack<char> st;
         string ans;
+        stack<char> st;
         for(auto x:s){
-            if(!st.empty() && x=='*')
+            if(!st.empty() && x=='*') 
                 st.pop();
             else
                 st.push(x);
