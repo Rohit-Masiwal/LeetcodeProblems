@@ -1,31 +1,27 @@
 class Solution {
 public:
-    bool wordBreak(string s, vector<string>& wordDict) {
-    const int n = s.length();
-    const int maxLength = getMaxLength(wordDict);
-    const unordered_set<string> wordSet{begin(wordDict), end(wordDict)};
-    vector<int> dp(n + 1);
-    dp[0] = true;
-
-    for (int i = 1; i <= n; ++i)
-      for (int j = i - 1; j >= 0; --j) {
-        if (i - j > maxLength)
-          break;
-        if (dp[j] && wordSet.count(s.substr(j, i - j))) {
-          dp[i] = true;
-          break;
+    int dp[301];
+    bool checkString(int pos, string s, map<string, bool> hashMap) {
+        if(pos==s.size()) return true;
+        if(dp[pos]!=-1) return dp[pos];
+        string t;
+        for(int i=pos;i<s.size();i++) {
+            t+=s[i];
+            if(hashMap[t]==true) {
+                // cout<<pos<<" "<<i<<"\n";
+                bool check = checkString(i+1, s, hashMap);
+                if(check) return true;
+            }
         }
-      }
-
-    return dp[n];
-  }
-
- private:
-  int getMaxLength(const vector<string>& wordDict) {
-    return max_element(begin(wordDict), end(wordDict),
-                       [](const auto& a, const auto& b) {
-                         return a.length() < b.length();
-                       })
-        ->length();
-  }
+        return dp[pos]=false;
+    }
+    bool wordBreak(string s, vector<string>& wordDict) {
+        int n=wordDict.size();
+        memset(dp,-1,sizeof(dp));
+        map<string, bool> hashMap;
+        for(auto x: wordDict) {
+            hashMap[x] = true;
+        }
+        return checkString(0, s, hashMap);
+    }
 };
