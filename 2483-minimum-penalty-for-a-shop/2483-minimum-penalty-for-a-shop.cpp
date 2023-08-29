@@ -1,14 +1,20 @@
 class Solution {
 public:
     int bestClosingTime(string customers) {
-        int max_score = 0, score = 0, best_hour = -1;
-        for(int i = 0; i < customers.size(); ++i) {
-            score += (customers[i] == 'Y') ? 1 : -1;
-            if(score > max_score) {
-                max_score = score;
-                best_hour = i;
+        int currPenalty=0;
+        for(auto x:customers) currPenalty++;
+        int minPenalty=currPenalty;
+        int ans=0;
+        for(int i=0;i<customers.size();i++) {
+            if(customers[i]=='Y')
+                currPenalty--;
+            else
+                currPenalty++;
+            if(currPenalty < minPenalty) {
+                minPenalty = currPenalty;
+                ans=i+1;
             }
         }
-        return best_hour + 1;
+        return ans;
     }
 };
