@@ -7,8 +7,7 @@ public:
         for(int i=2;i<=n;i++) {
             int space = (i-1)*2+1;
             int possibility = space*(space+1)/2;
-            ans*=possibility;
-            ans%=M;
+            ans=(ans*possibility)%M;
         }
         return ans;
     }
