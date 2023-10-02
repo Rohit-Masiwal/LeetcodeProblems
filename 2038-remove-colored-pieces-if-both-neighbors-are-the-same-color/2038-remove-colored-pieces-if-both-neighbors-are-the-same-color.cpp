@@ -1,16 +1,13 @@
 class Solution {
 public:
-    bool winnerOfGame(string s) {
-        int a = 0, b = 0;
-        for(int i=1; i<s.size()-1; i++){
-            if(s[i-1] == s[i] && s[i] == s[i+1]){
-                if(s[i] == 'A')
-                    a++;
-                else
-                    b++;
-			}
-        }   
-                    
-        return a>b;
+    bool winnerOfGame(string c) {
+        int Acnt=0,Bcnt=0;
+        for(int i=1;i<c.size()-1;i++) {
+            if(c[i-1]=='A' && c[i]=='A' && c[i+1]=='A')
+                Acnt++;
+            if(c[i-1]=='B' && c[i]=='B' && c[i+1]=='B')
+                Bcnt++;          
+        }
+        return Acnt>Bcnt;
     }
 };
