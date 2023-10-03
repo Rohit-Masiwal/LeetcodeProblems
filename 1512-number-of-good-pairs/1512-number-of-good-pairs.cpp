@@ -1,11 +1,11 @@
 class Solution {
 public:
     int numIdenticalPairs(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
+        map<int,int> mp;
         int ans=0;
-        for(int i=0;i<nums.size();i++) {
-            for(int j=i+1;j<nums.size();j++) 
-                if(nums[i]==nums[j]) ans++;
+        for(auto x:nums) {
+            ans+=mp[x];
+            mp[x]++;
         }
         return ans;
     }
