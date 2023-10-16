@@ -12,10 +12,10 @@ public:
                 }
             ans.push_back(v);
         }
-        vector<int> res;
-        for(int i=0;i<ans[r].size();i++){
-            res.push_back(ans[r][i]);
-        }
-        return res;
+        // vector<int> res;
+        // for(int i=0;i<ans[r].size();i++){
+        //     res.push_back(ans[r][i]);
+        // }
+        return ans[r];
     }
 };
