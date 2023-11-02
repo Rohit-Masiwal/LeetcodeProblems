@@ -11,26 +11,26 @@
  */
 class Solution {
 public:
-    int c=0;
-    pair<int,int> func(TreeNode* root) {
+    pair<int,int> func(TreeNode* root, int &count) {
         if(!root-> left && !root->right) {
-            c+=1;
+            count+=1;
             return {root->val,1};
         }
         pair<int,int> right={0,0},left={0,0};
         if(root->right) {
-            right = func(root->right);
+            right = func(root->right,count);
         }
         if(root->left) {
-            left = func(root->left);
+            left = func(root->left,count);
         }
         if((right.first+left.first+root->val)/(right.second+left.second+1)==root->val) {
-            c+=1;
+            count+=1;
         }
         return {right.first+left.first+root->val,right.second+left.second+1};
     }
     int averageOfSubtree(TreeNode* root) {
-        func(root);
-        return c;
+        int count=0;
+        func(root,count);
+        return count;
     }
 };
