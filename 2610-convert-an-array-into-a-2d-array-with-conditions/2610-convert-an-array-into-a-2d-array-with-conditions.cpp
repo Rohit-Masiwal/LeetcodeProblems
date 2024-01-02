@@ -3,7 +3,6 @@ public:
     vector<vector<int>> findMatrix(vector<int>& nums) {
         unordered_map<int,int> ump;
         for(auto x:nums) ump[x]++;
-        for(auto x:ump) cout<<x.first<< " "<< x.second<<"\n";
         int m=0;
         for(auto x:ump) {  
             m=max(m,x.second);
