@@ -11,21 +11,21 @@
  */
 class Solution {
 public: 
-    bool check(TreeNode* root,int temp,vector<int> &v) {
+    void check(TreeNode* root,int temp,int t, bool& isTargetMatched) {
         if(root) {
             temp+=root->val;
             if(root->left==NULL && root->right==NULL) {
-                v.push_back(temp);
+                if(temp==t) {
+                    isTargetMatched=true;
+                }
             }
-            check(root->left,temp,v);
-            check(root->right,temp,v);
+            check(root->left,temp,t, isTargetMatched);
+            check(root->right,temp,t, isTargetMatched);
         }
-        return 0;
     }
     bool hasPathSum(TreeNode* root, int targetSum) {
-        vector<int> v;
-        check(root,0,v);
-        for(auto x:v) if(x==targetSum) return 1;
-        return 0;
+        bool isTargetMatched=false;
+        check(root,0,targetSum,isTargetMatched);
+        return isTargetMatched;
     }
 };
