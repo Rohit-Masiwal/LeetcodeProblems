@@ -10,8 +10,7 @@ public:
         for(auto x:mp) v.push_back({x.first,x.second});
         sort(v.begin(),v.end());
         
-        int i;
-        for(i=0;i<v.size();) {
+        for(int i=0;i<v.size();) {
             if(i+g>v.size()) return false;
             
             for(int j=i+1;j<i+g;j++) {
