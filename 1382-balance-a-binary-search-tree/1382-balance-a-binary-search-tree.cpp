@@ -10,33 +10,26 @@
  * };
  */
 class Solution {
-public:
-    vector<TreeNode*> inorder;
-    void findInorder(TreeNode* root)
-    {
-        if(root==NULL)
-            return;
-        findInorder(root->left);
-        inorder.push_back(root);
-        findInorder(root->right);
+public:vector<TreeNode*>v;
+    void inorder(TreeNode* root) {
+        if(root) {
+            inorder(root->left);
+            v.push_back(root);
+            inorder(root->right);
+        }
     }
-    TreeNode* buildTree(int start,int end)
-    {
-        if(start>end)
-            return NULL;
+    TreeNode* tree(int start, int end) {
+        if(start>end) return NULL;
         int mid=(start+end)/2;
-        TreeNode* root=inorder[mid];
-        root->left=buildTree(start,mid-1);
-        root->right=buildTree(mid+1,end);
+        TreeNode* root=v[mid];
+        root->left=tree(start,mid-1);
+        root->right=tree(mid+1,end);
         return root;
     }
-    TreeNode* balanceBST(TreeNode* root) 
-    {
-        if(root==NULL)
-            return NULL;
-        findInorder(root);
-        int n=inorder.size();
-        root=buildTree(0,n-1);
+    TreeNode* balanceBST(TreeNode* root) {
+        inorder(root);
+        int n=v.size();
+        root = tree(0,n-1);
         return root;
     }
 };
