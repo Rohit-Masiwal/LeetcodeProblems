@@ -10,8 +10,8 @@ public:
                 else five--;
             } else {
                 if(ten>=1 && five>=1) {
-                        ten--;
-                        five--;
+                    ten--;
+                    five--;
                 }
                 else if(five>=3) five-=3;
                 else return false;
