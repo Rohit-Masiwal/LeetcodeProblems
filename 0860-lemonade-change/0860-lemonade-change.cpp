@@ -9,12 +9,9 @@ public:
                 if(five==0) return false;
                 else five--;
             } else {
-                if(ten>=1) {
-                    if(five>=1) {
+                if(ten>=1 && five>=1) {
                         ten--;
                         five--;
-                    }
-                    else return false;
                 }
                 else if(five>=3) five-=3;
                 else return false;
